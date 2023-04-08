@@ -1,0 +1,11 @@
+[package]
+name = "asteroids"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+raylib = { branch = "4.5.0-redesign", git = "https://github.com/TSnake41/raylib-rs" }
+nalgebra = { version = "0.32", features = ["mint"] }
+fastrand = "1.9"
