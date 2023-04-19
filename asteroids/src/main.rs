@@ -13,6 +13,7 @@ fn main() {
         .height(480)
         .build();
     let raudio = RaylibAudio::init_audio_device();
+    raudio.set_master_volume(0.5);
 
     rl.set_target_fps(60);
 
