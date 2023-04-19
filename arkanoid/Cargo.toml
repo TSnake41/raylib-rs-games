@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 raylib = { branch = "4.5.0-redesign", git = "https://github.com/TSnake41/raylib-rs" }
 nalgebra = { version = "0.32", features = ["mint"] }
+fastrand = "1.9"
