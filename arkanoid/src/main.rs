@@ -6,7 +6,7 @@ mod assets;
 mod game;
 
 fn main() {
-    let (rl, thread) = raylib::init()
+    let rl = raylib::init()
         .title("Arkanoid")
         .width(800)
         .height(480)
@@ -23,6 +23,6 @@ fn main() {
 
     while !rl.window_should_close() {
         game.update(&rl, &raudio, &assets);
-        rl.begin_drawing(&thread, |d| game.draw(&rl, &d));
+        rl.begin_drawing(|d| game.draw(&rl, &d));
     }
 }

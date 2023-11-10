@@ -162,7 +162,7 @@ impl Game {
                     self.player.size.y,
                 );
 
-                if r.check_collision_circle_rec(self.ball.position.into(), self.ball.radius as f32)
+                if r.check_collision_circle_rec(self.ball.position, self.ball.radius as f32)
                     && self.ball.speed.y > 0.0
                 {
                     self.ball.speed.y *= -1.0;
@@ -246,6 +246,8 @@ impl Game {
     }
 
     pub fn draw(&self, rl: &RaylibHandle, d: &RaylibDrawHandle) {
+        d.draw_fps(10, 10);
+
         let (w, h) = (rl.get_screen_width() as f32, rl.get_screen_height() as f32);
 
         d.clear_background(Color::RAYWHITE);

@@ -1,12 +1,12 @@
 use raylib::prelude::*;
 
-pub struct Assets<'bind, 'a> {
-    pub explosion_sounds: Vec<Sound<'bind, 'a>>,
-    pub shoot_sound: Option<Sound<'bind, 'a>>,
+pub struct Assets<'rl> {
+    pub explosion_sounds: Vec<Sound<'rl>>,
+    pub shoot_sound: Option<Sound<'rl>>,
 }
 
-impl<'bind> Assets<'bind, '_> {
-    pub fn load(raudio: &'bind RaylibAudio) -> Self {
+impl<'rl> Assets<'rl> {
+    pub fn load(raudio: &'rl RaylibAudio) -> Self {
         // Load as much explosionI.wav as available.
         let explosion_sounds = (1..)
             .map(|i| Sound::load_sound(raudio, format!("assets/explosion{i}.wav").as_str()).ok())
